@@ -1,26 +1,45 @@
 <template>
   <div class="row">
-    <div class="col col-lg-6 col-md-6 col-sm-6 left-skew">
-      <div class="col left"></div>
+    <div class="col col-lg-6 col-md-6 col-sm-6 left-skew" v-bind:class="{ customColor: isActive === 'customer', vendorColor: isActive === 'vendor' }">
+      <div class="col left" v-bind:class="{ customColor: isActive === 'customer', vendorColor: isActive === 'vendor' }"></div>
     </div>
     <div class="col col-lg-6 col-md-6 col-sm-6 m-auto right">
-      <p class="links p-2 active">Vendor login</p> |
-      <p class="links p-2">Customer login</p><br>
+      <p class="links p-2" v-bind:class="{ active: isActive === 'vendor' }" v-on:click="isActive='vendor'">Vendor login</p> |
+      <p class="links p-2" v-bind:class="{ active: isActive === 'customer' }" v-on:click="isActive='customer'">Customer login</p><br>
       <input placeholder="@username" class="m-3 input-field" />
       <br />
       <input placeholder="Password" class="m-3 input-field" />
       <br />
-      <router-link to="/dashboard"><button class="m-3 input-login">Login</button></router-link>
+      <router-link to="/dashboard"><button class="m-3 input-login" v-bind:class="{ customColor: isActive === 'customer', vendorColor: isActive === 'vendor' }">Login</button></router-link>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      isActive : 'vendor'
+    }
+  }
+}
+</script>
+
 <style scoped>
 .left,
 .left-skew {
-  background: #2c3e50;
   height: 100vh;
   width: 100%;
+}
+
+.vendorColor {
+  background: #2c3e50;
+  color:white;
+}
+
+.customColor {
+  background: #42b983;
+  color: black;
 }
 
 .left {
@@ -41,7 +60,7 @@
 }
 
 .input-login {
-  background: #2c3e50;
+  /* background: #2c3e50; */
   border: none;
   color: white;
   padding: 8px 20px;
@@ -49,7 +68,7 @@
 
 .input-login:hover {
   color: black;
-  background: #42b983;
+  /* background: #42b983; */
 }
 
 .input-field:focus,
@@ -64,10 +83,11 @@
 }
 .links.active {
   color: #2c3e50;
+  font-weight: bold;
 }
 
 .links:hover {
-  color: #42b983;
+    color: #0c2a49;
 }
 
 </style>

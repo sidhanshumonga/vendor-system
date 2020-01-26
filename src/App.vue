@@ -7,15 +7,7 @@
 <script>
 
 export default {
-  name: "app",
-  components: {
-    // Login
-  },
-  data() {
-    return {
-      loggedin: false
-    };
-  }
+  name: "app"
 };
 </script>
 
