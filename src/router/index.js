@@ -1,22 +1,36 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Dashboard from '../components/Dashboard'
+import Login from '../components/Login'
+import HighchartsVue from 'highcharts-vue'
+import Highcharts from 'highcharts'
+import exportingInit from 'highcharts/modules/exporting'
 
+
+exportingInit(Highcharts)
 Vue.use(VueRouter)
+Vue.use(HighchartsVue)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
+    name: 'login',
+    component: Login
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    // component: () => import(/* webpackChunkName: "dashboard" */ '../components/Dashboard')
+    component: Dashboard
+
   }
 ]
 
