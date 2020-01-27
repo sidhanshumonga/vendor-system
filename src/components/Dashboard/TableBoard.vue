@@ -1,7 +1,7 @@
 <template>
   <div class="row px-4">
-    <div class="col px-0 table-row text-center">
-      <table class="table table-bordered">
+    <div class="col p-0 table-row text-center">
+      <table class="table table-bordered m-0">
         <thead>
           <tr>
             <th colspan="2" class="title">{{title}}</th>
@@ -33,6 +33,7 @@ th {
     background: white;
   position: sticky;
   top: 0;
+  padding: 1rem;
 }
 
 .title {

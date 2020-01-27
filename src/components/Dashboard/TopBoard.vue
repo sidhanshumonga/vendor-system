@@ -83,7 +83,7 @@ $dark: #2c3e50;
   border: 8px solid $light;
   height: 172px;
   width: 172px;
-  padding-top: 1.7rem;
+  padding-top: 2.5rem;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   border-radius: 100%;

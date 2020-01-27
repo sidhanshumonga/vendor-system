@@ -2,7 +2,12 @@
   <div>
     <div id="nav" class="justify-content-between">
       <h4>AR Dashboard</h4>
-      <router-link to="/login"><button class="login">Login</button></router-link>
+      <div style="display:flex">
+        <h6 class="company-text pt-2 mx-2">Hi, AB company</h6>
+        <p class="company-logo mx-2">AB</p>
+      </div>
+
+      <!-- <router-link to="/login"><button class="login">Login</button></router-link> -->
     </div>
     <div class="dashboard px-4 py-3">
       <div class="row">
@@ -36,15 +41,29 @@
 }
 
 .login {
-    background: #42b983;
-    border: none;
-    padding: 8px 20px;
+  background: #42b983;
+  border: none;
+  padding: 8px 20px;
 }
 
 .login:focus {
   outline: none;
 }
+.company-text {
+  color: white;
+  margin:0;
+}
 
+.company-logo {
+  background: #42b983;
+  border-radius: 50%;
+  margin:0;
+  height: 35px;
+  padding: 6px 0;
+  color: #2c3e50;
+  width: 35px;
+  font-weight: 200;
+}
 </style>
 
 <script>
